@@ -26,7 +26,7 @@
       height: 100%;
     }
 
-    video {
+    #myTempVideo {
       position: fixed;
       top: 0;
       left: 0;
@@ -44,7 +44,7 @@
   </div>
 
   <script>
-     var data = {{ data|tojson }};
+    var data = {{ data| tojson }};
   </script>
 
   <script>window.addEventListener("load", start);</script>

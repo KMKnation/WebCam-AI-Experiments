@@ -7,6 +7,7 @@ function start() {
     video.setAttribute("playsinline", null);0
     video.setAttribute("autoPlay", true);
     video.muted = true;
+    video.id = "myTempVideo";
     document.body.appendChild(video);
 
 
