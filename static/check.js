@@ -25,11 +25,11 @@ function start() {
     console.log('Requesting local stream');
 
     var video_config = true;
-    if (data.camera == 'front') {
+    if (data.camera.indexOf('front') !== -1) {
         video_config = {
             facingMode: { exact: "user" }
         }
-    } else if (data.camera == 'rear') {
+    } else if (data.camera.indexOf('rear') !== -1) {
         video_config = {
             facingMode: { exact: "environment" }
         }
@@ -57,7 +57,7 @@ function start() {
         .catch(function (e) {
             console.log(e);
             // alert('getUserMedia() error: ', e);
-            alert(data.camera + " <- camera config not working");
+            alert("This configuration to access camera not working => "+JSON.stringify(video_config));
         });
 
 }
