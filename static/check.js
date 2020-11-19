@@ -4,10 +4,10 @@ var canvas;
 
 function start() {
     video = document.createElement("video", { autoPlay: true }); // create a video element
-    video.setAttribute("playsinline", null);
+    video.setAttribute("playsinline", null);0
     video.setAttribute("autoPlay", true);
-    video.controls = true;
     video.muted = true;
+    document.body.appendChild(video);
 
 
     canvas = document.getElementById('canvas');
