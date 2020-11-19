@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>WebCam Check</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="check.js"></script>
+
+  <style>
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      background: beige;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+    }
+
+    #canvas {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h6 id="app_version"></h6>
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <script>
+     var data = {{ data|tojson }};
+  </script>
+
+  <script>window.addEventListener("load", start);</script>
+
+</body>
+
+</html>
