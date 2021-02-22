@@ -12,6 +12,17 @@ def send_js(path):
     return send_from_directory('static', path)
 
 
+@app.route('/check')
+def check():
+    try:
+        return render_template('checkapi.html')  # render a template
+
+    except Exception as err:
+        print(err)
+
+    return "404 NOT FOUND"
+
+
 # use decorators to link the function to a url
 @app.route('/')
 def front():
