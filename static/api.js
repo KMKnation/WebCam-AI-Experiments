@@ -23,6 +23,7 @@ window.addEventListener("load", () => {
     let xmlButton = document.getElementById("xml");
     let xmlWithCred = document.getElementById("xml-getcred");
     let xmlOmit = document.getElementById("omit");
+    let corsElem = document.getElementById("no-cors");
 
     xmlButton.onclick = (ev) => {
 
@@ -33,14 +34,14 @@ window.addEventListener("load", () => {
                 console.log("response: ", res);
             }
         }
-        xhr.open("PUT", "https://global.xirsys.net/_turn/TethritNow", true);
+        xhr.open("PUT", "https://global.xirsys.net/_turn/Finning", true);
         xhr.setRequestHeader("Authorization", "Basic " + btoa("hb301:be92d980-0b99-11ea-a278-0242ac110003"));
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(JSON.stringify({ "format": "urls" }));
     }
 
     xmlWithCred.onclick = (ev) => {
-        postData('https://global.xirsys.net/_turn/TethritNow', 'same-origin', { "format": "urls" })
+        postData('https://global.xirsys.net/_turn/Finning', 'same-origin', { "format": "urls" })
             .then(data => {
                 console.log(data); // JSON data parsed by `data.json()` call
             });
@@ -48,12 +49,22 @@ window.addEventListener("load", () => {
 
     xmlOmit.onclick = (ev) =>{
         
-        postData('https://global.xirsys.net/_turn/TethritNow', 'omit', { "format": "urls" })
+        postData('https://global.xirsys.net/_turn/Finning', 'omit', { "format": "urls" })
         .then(data => {
             console.log(data); // JSON data parsed by `data.json()` call
         });
 
     }
+
+    corsElem.onclick = (ev) =>{
+        
+        postData('https://global.xirsys.net/_turn/Finning', 'omit', { "format": "urls" })
+        .then(data => {
+            console.log(data); // JSON data parsed by `data.json()` call
+        });
+
+    }
+    
 
 
 });
